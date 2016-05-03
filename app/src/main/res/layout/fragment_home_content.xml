@@ -36,8 +36,10 @@
             android:layout_weight="2">
 
             <EditText
+
                 android:hint="@string/message_hint"
                 android:text="@={viewModel.message}"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -45,6 +47,7 @@
                 android:id="@+id/login_bt_login"
                 android:text="@string/button_parse"
                 android:onClick="@{viewModel.parseMessageClick}"
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"

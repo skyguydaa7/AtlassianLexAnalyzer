@@ -4,6 +4,7 @@ import android.content.Context;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.atlassian.lbbento.atlassianlexicalanalyzer.util.MessageLexicalAnaliyser;
 import com.atlassian.lbbento.atlassianlexicalanalyzer.util.ViewUtil;
@@ -37,6 +38,7 @@ public class HomeFragmentViewModel extends DefaultViewModel {
 
     //Actions
     public void parseMessageClick(View view) {
+
         state.set(ViewUtil.VIEW_STATE_LOADING);
 
         //subscriber
