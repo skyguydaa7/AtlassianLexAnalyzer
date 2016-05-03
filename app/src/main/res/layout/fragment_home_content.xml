@@ -17,7 +17,6 @@
 
     <!-- Content-->
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/activity_vertical_margin"
@@ -26,15 +25,12 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
-        >
-
-
+        android:orientation="vertical">
 
         <!-- INput-->
         <LinearLayout
             android:id="@+id/inputContainer"
             android:orientation="vertical"
-            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2">
@@ -65,7 +61,7 @@
             android:id="@+id/outputContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
+            android:layout_weight="1"
             >
 
             <!-- Loading Spinner-->
@@ -90,13 +86,13 @@
             </TextView>
 
         </RelativeLayout>
-        
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
+            android:layout_weight="0.5"
+            android:gravity="center_horizontal|bottom"
 
             >
 
@@ -114,8 +110,5 @@
 
 
 
-
     </LinearLayout>
-
-
 </layout>
