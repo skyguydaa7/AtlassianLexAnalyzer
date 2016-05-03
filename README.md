@@ -30,9 +30,7 @@ Running Tests:
 
 
 Installing the app:
-	- YOu can either : 
-		-Clone the repository
-		<a href="https://github.com/skyguydaa7/AtlassianLexAnalyzer/blob/master/apk/atlassianassigment.apk?raw=true">-Download the apk file here.</a>
+	- YOu can either clone the repository or  <a href="https://github.com/skyguydaa7/AtlassianLexAnalyzer/blob/master/apk/atlassianassigment.apk?raw=true">-Download the apk file here.</a>
   
    
 
