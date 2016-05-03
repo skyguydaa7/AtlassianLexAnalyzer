@@ -76,14 +76,31 @@
                 app:viewModel="@{viewModel}"
                 />
 
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.state == ViewUtil.VIEW_STATE_LOADED ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:layout_above="@+id/outputJson"
+                android:layout_marginBottom="10dp"
+                android:text="@string/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
             <TextView
                 android:id="@+id/outputJson"
                 android:text="@{viewModel.messageOutput}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="@{viewModel.state == ViewUtil.VIEW_STATE_LOADED ? View.VISIBLE : View.GONE}">
+                >
 
             </TextView>
+            </LinearLayout>
 
         </RelativeLayout>
 

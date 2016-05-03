@@ -2,8 +2,10 @@
     <string name="app_name">AtlassianLexicalAnalyzer</string>
 
     <string name="message_hint">Enter the message to be parsed</string>
-    <string name="button_parse">Click to parse the message</string>
+    <string name="button_parse">Parse the message</string>
 
+
+    <string name="result">Result</string>
 
     <string name="author_name">Developed by Lucas Bento</string>
     <string name="author_email">lucasbento7@gmail.com</string>
