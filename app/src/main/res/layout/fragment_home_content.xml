@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    android:animateLayoutChanges="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/fragment_home"
+    tools:context=".main.MainActivity">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.atlassian.lbbento.atlassianlexicalanalyzer.util.ViewUtil"/>
+        <variable
+            name="viewModel"
+            type="com.atlassian.lbbento.atlassianlexicalanalyzer.home.HomeFragmentViewModel"/>
+    </data>
+
+    <!-- Content-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+        >
+
+
+
+        <!-- INput-->
+        <LinearLayout
+            android:id="@+id/inputContainer"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <EditText
+                android:hint="@string/message_hint"
+                android:text="@={viewModel.message}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/login_bt_login"
+                android:text="@string/button_parse"
+                android:onClick="@{viewModel.parseMessageClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+
+
+        <!-- Output-->
+        <RelativeLayout
+            android:id="@+id/outputContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            >
+
+            <!-- Loading Spinner-->
+            <include
+                layout="@layout/view_util_loading"
+                app:viewModel="@{viewModel}"
+                />
+
+            <!-- Error -->
+            <include
+                layout="@layout/view_util_error"
+                app:viewModel="@{viewModel}"
+                />
+
+            <TextView
+                android:id="@+id/outputJson"
+                android:text="@{viewModel.messageOutput}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.state == ViewUtil.VIEW_STATE_LOADED ? View.VISIBLE : View.GONE}">
+
+            </TextView>
+
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/author_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/author_email"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</layout>
